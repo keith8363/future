@@ -65,7 +65,7 @@ export default defineConfig(({ command, mode }) => {
 		server: {
 			// https: false,
 			host: true, // 监听所有IP地址
-			port: 8080, // 端口
+			port: 6275, // 端口
 			open: true, // 在开发服务器启动时自动在浏览器中打开应用程序
 			proxy: {
 				"/api": {
