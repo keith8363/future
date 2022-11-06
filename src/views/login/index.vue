@@ -1,8 +1,8 @@
 <template>
-    <div class='app-container' ref="container">
+    <div ref="container" class="app-container">
       <!-- 流星元素 -->
-      <div class="shooting_star" v-for="item in 12" :key="item"></div>
-      
+      <div class="shooting_star" v-for="item in 12" :key="item" />
+
       <div class="box">
         <div class="title">
           <img src="../../assets/future.png" />
@@ -27,7 +27,8 @@
             </el-form-item>
           </el-form>
         </div>
-       </div>
+      </div>
+       
     </div>
 
 </template>
@@ -36,7 +37,7 @@
 import { anaList } from '@/utils/get-ana'
 export default defineComponent({
   name:'Login',
-  setup(){
+  setup() {
     const num = Math.floor(Math.random() * 6)
     const ana = anaList[num]
 
