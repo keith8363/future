@@ -7,7 +7,16 @@ import svgIcon from "@/components/SvgIcon/index.vue";
 import 'virtual:svg-icons-register'
 import App from './App.vue'
 
+import config from '@/setting'
+
+
+
+
 const app = createApp(App).use(pinia).component('svg-icon', svgIcon)
+
+
+app.config.globalProperties.$CONFIG = config;
+
 
 // 全局自动注册Icon
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {

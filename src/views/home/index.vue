@@ -1,6 +1,14 @@
 <template>
     <div class='app-container'>
        首页
+       <div class="one"></div>
+       <div class="three"></div>
+    <div class="four">
+
+    </div>
+    <div class="five">
+
+    </div>
     </div>
 </template>
 

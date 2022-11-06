@@ -2,6 +2,13 @@ const config = {
     /**
    * @type {String}
    */
-     title:'Future',
+     TITLE:'Future',
+
+   /**
+    * @type {String}
+    */
+    APP_NAME:'DOME练习系统'
 }
 export default config
+
+

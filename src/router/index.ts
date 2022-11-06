@@ -22,7 +22,7 @@ router.beforeEach((to,from,next)=>{
   const user = useUserStore()
   
   const token:string|null = user.token
-  if(!token && to.path !== '/login'){
+  if(token && to.path !== '/login'){
     nProgress.start()
     next('/login')
   }else{
