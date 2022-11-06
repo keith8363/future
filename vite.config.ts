@@ -4,6 +4,8 @@ import AutoImport from "unplugin-auto-import/vite"
 import Components from "unplugin-vue-components/vite"
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+
+
 import { resolve } from "path"
 import path from 'path'
 
@@ -48,16 +50,22 @@ export default defineConfig(({ command, mode }) => {
           'vue-router',
           'pinia'
         ],
-				resolvers: [ElementPlusResolver()], // 自动导入element组件及Icon
+				resolvers: [
+          // 自动导入element组件
+          ElementPlusResolver()
+        ], 
         dts: 'src/auto-import.d.ts',
 			}),
 			Components({
         dirs: ['src/components/'], // 自动导入自定义组件
         extensions: ['vue'], // 自动导入组建的文件类型
-				resolvers: [ElementPlusResolver()], // 自动解析element组件及Icon
+				resolvers: [
+          ElementPlusResolver()
+        ], // 自动解析element组件及Icon
         dts: true, // 生成dts文件
         deep:true // 遍历子目录
-			})
+			}),
+     
      
 		],
 		resolve: { alias },

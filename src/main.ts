@@ -12,7 +12,7 @@ import config from '@/setting'
 
 
 
-const app = createApp(App).use(pinia).component('svg-icon', svgIcon)
+const app = createApp(App)
 
 
 app.config.globalProperties.$CONFIG = config;
@@ -24,4 +24,4 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 
 
-app.use(router).mount('#app')
+app.use(pinia).component('svg-icon', svgIcon).use(router).mount('#app')

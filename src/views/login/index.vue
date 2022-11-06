@@ -5,22 +5,24 @@
       
       <div class="box">
         <div class="title">
-          <img src="../../assets/future.png" >
+          <img src="../../assets/future.png" />
+          <div class="contant">{{ana.text}}</div>
+          <div class="author" v-if="ana.author">{{'--' + ana.author}}</div>
         </div>
         <div class="login">
           <h1>Login</h1>
-          <el-form :model="form" label-width="140px" label-position="top" size="large">
-            <el-form-item label="账号:">
-              <el-input v-model="form.name" placeholder="UserName" clearable />
+          <el-form :model="form" label-width="140px" label-position="top" size="large" ref="ruleFormRef" :rules="rules">
+            <el-form-item label="账号:" prop="name">
+              <el-input v-model.trim="form.name" placeholder="UserName" clearable prefix-icon="User" />
             </el-form-item>
-            <el-form-item label="密码:">
-              <el-input v-model="form.password" placeholder="Password" type="password" clearable/>
+            <el-form-item label="密码:" prop="password">
+              <el-input v-model.trim="form.password" placeholder="Password" type="password" clearable prefix-icon="Lock"/>
             </el-form-item>
             <el-form-item label="忘记密码?">
               <a href=":javascrpt;"></a>
             </el-form-item>
             <el-form-item class="btn">
-              <el-button type="primary">登 录</el-button>
+              <el-button type="primary" @click="submitForm(ruleFormRef)">登 录</el-button>
               <el-button type="primary">注 册</el-button>
             </el-form-item>
           </el-form>
@@ -31,17 +33,54 @@
 </template>
 
 <script  lang='ts'>
+import { anaList } from '@/utils/get-ana'
 export default defineComponent({
   name:'Login',
   setup(){
+    const num = Math.floor(Math.random() * 6)
+    const ana = anaList[num]
+
+    const ruleFormRef = ref<FormInstance>()
+   
+    const validatePass = (rule: any, value: any, callback: any) => {
+      if (value === '') {
+        callback(new Error('Please input the password'))
+      } else {
+        if (form.password !== '') {
+          if (!ruleFormRef.value) return
+          ruleFormRef.value.validateField('password', () => null)
+        }
+        callback()
+      }
+    }
+
     const state = reactive({
       form:{
         name:'',
         password:''
+      },
+      rules:{
+         password: [{ validator: validatePass, trigger: 'blur' }],
       }
     })
+
+
+    const submitForm = (formEl: FormInstance | undefined) => {
+      if (!formEl) return
+      formEl.validate((valid) => {
+        if (valid) {
+          console.log('submit!')
+        } else {
+          return false
+        }
+      })
+    }
+
     return {
-      ...toRefs(state)
+      ...toRefs(state),
+      validatePass,
+      submitForm,
+      ana
     }
   }
 })
@@ -53,11 +92,13 @@ export default defineComponent({
       top: 0;
       left: 0;
       width: 100%;
-      height: 100vh;
+      height: 100%;
       background: url('../../assets/girl.png');
       background-position: center;
       background-size: cover;
       animation: girl 50s linear infinite;
+      box-sizing: border-box;
+      overflow: hidden;
 
 
     .shooting_star {
@@ -95,27 +136,51 @@ export default defineComponent({
         justify-content: space-between;
         width: 60%;
         height: 80%;
-        background-color: rgba(50,50,50,0.5);
+        background-color: rgba(50,50,50,0.3);
         border-radius: 10px;
         border: 1px solid rgba(255,255,255,0.2);
         overflow: hidden;
 
         .title{
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
           width: 50%;
           height: 100%;
-          background-color: #0ac78f;
-          overflow: hidden
+          overflow: hidden;
+          box-sizing: border-box;
+          padding: 30px 10px;
+
+          img {
+            margin-left: 430px;
+          }
+
+          .contant{
+            margin-top: -20px;
+            width: 300px;
+            color:#75767a;
+            text-indent: 2rem;
+            font-size: includes(font-size-base);
+          }
+
+          .author{
+            margin-top: 20px;
+            width: 300px;
+            color:#75767a;
+            text-align: right;
+            font-size: includes(font-size-base);
+          }
         };
 
         .login{
           display: flex;
           flex-direction: column;
           align-items: center;
-          margin-top: 60px;
           border-radius: 5px;
           width: 50%;
-          height: 80%;
-          color: rgba(255,255,255);
+          background-color: rgba(255, 255, 255, 0.9);
+          padding: 30px 10px;
 
 
           h1 {
@@ -123,10 +188,11 @@ export default defineComponent({
             font-family:'Times New Roman', Times, serif;
             font-size:40px;
             margin-bottom: 10px;
+            color: includes(text-color);
           }
 
           :deep(.el-form .el-form-item .el-form-item__label) {
-            color: #fff;
+            color: includes(text-color-secondary);
             font-family: 'Times New Roman', Times, serif;
             margin-top: 20px;
             width: 300px;
