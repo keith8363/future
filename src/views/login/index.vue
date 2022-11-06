@@ -11,18 +11,18 @@
         </div>
         <div class="login">
           <h1>Login</h1>
-          <el-form :model="form" label-width="140px" label-position="top" size="large" ref="ruleFormRef" :rules="rules">
-            <el-form-item label="账号:" prop="name">
+          <el-form ref="ruleFormRef" :model="form" label-width="120px" label-position="top" :rules="rules">
+            <el-form-item label="账号:" prop="name" required>
               <el-input v-model.trim="form.name" placeholder="UserName" clearable prefix-icon="User" />
             </el-form-item>
-            <el-form-item label="密码:" prop="password">
+            <el-form-item label="密码:" prop="password" required>
               <el-input v-model.trim="form.password" placeholder="Password" type="password" clearable prefix-icon="Lock"/>
             </el-form-item>
             <el-form-item label="忘记密码?">
               <a href=":javascrpt;"></a>
             </el-form-item>
             <el-form-item class="btn">
-              <el-button type="primary" @click="submitForm(ruleFormRef)">登 录</el-button>
+              <el-button type="primary" @click="submitForm()">登 录</el-button>
               <el-button type="primary">注 册</el-button>
             </el-form-item>
           </el-form>
@@ -33,42 +33,41 @@
 
 </template>
 
-<script  lang='ts'>
-import { anaList } from '@/utils/get-ana'
-export default defineComponent({
-  name:'Login',
-  setup() {
-    const num = Math.floor(Math.random() * 6)
-    const ana = anaList[num]
+<script  lang='ts' setup name="Login">
+    import { anaList } from '@/utils/get-ana'
 
     const ruleFormRef = ref<FormInstance>()
-   
+  
     const validatePass = (rule: any, value: any, callback: any) => {
       if (value === '') {
         callback(new Error('Please input the password'))
       } else {
-        if (form.password !== '') {
-          if (!ruleFormRef.value) return
-          ruleFormRef.value.validateField('password', () => null)
-        }
         callback()
       }
     }
 
-    const state = reactive({
-      form:{
-        name:'',
-        password:''
-      },
-      rules:{
-         password: [{ validator: validatePass, trigger: 'blur' }],
-      }
+    const num = Math.floor(Math.random() * 6)
+
+    const ana = anaList[num]
+
+    const form = reactive({
+      name:'',
+      password:''
     })
 
-
-    const submitForm = (formEl: FormInstance | undefined) => {
-      if (!formEl) return
-      formEl.validate((valid) => {
+    const rules = reactive({
+      name:[
+        { required:true, trigger: 'blur',message:'Please select Your Name' }
+      ],
+      password: [
+        { required:true, trigger: 'blur',message:'Please select Your password' },
+        { validator: validatePass, trigger: 'blur' }
+      ]
+    })
+   
+    const submitForm = () => {
+      if (!ruleFormRef.value) return
+        ruleFormRef.value.validate((valid) => {
         if (valid) {
           console.log('submit!')
         } else {
@@ -77,14 +76,8 @@ export default defineComponent({
       })
     }
 
-    return {
-      ...toRefs(state),
-      validatePass,
-      submitForm,
-      ana
-    }
-  }
-})
+  
+
 </script>
 
 <style lang='scss' scoped>
