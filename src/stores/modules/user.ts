@@ -1,18 +1,15 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-
-export const useUserStore = defineStore('user',{
-  state:()=>{
+export const useUserStore = defineStore("user", {
+  state: () => {
     return {
-      userName: 'keith',
+      userName: "keith",
       id: 7758521,
-      token:'123456678',
-    }
+      token: "123456678",
+    };
   },
   persist: {
-    key:'user',
+    key: "user",
     storage: window.sessionStorage,
-  }
-})
- 
-
+  },
+});

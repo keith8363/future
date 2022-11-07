@@ -1,5 +1,5 @@
-import {RouteRecordRaw}from 'vue-router'
+import { RouteRecordRaw } from "vue-router";
 
-const Layout = () => import('@/layout/index.vue')
+// const Layout = () => import("@/layout/index.vue");
 
-export const asyncRoutes:RouteRecordRaw[]=[]
+export const asyncRoutes: RouteRecordRaw[] = [];

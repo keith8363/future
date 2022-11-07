@@ -1,10 +1,9 @@
-<script setup lang="ts" />
-
+<script setup lang="ts">
+export default {};
+</script>
 
 <template>
-    <router-view />
+  <router-view />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -1,9 +1,8 @@
-
-const http = require("@/utils/https") 
+const http = require("@/utils/https");
 
 // 封装各种请求
-const post = (url:string, data = {}) => http.post(url, Object.assign(data));
-const get = (url:string, params = {}) => http.get(url, Object.assign(params));
+const post = (url: string, data = {}) => http.post(url, Object.assign(data));
+const get = (url: string, params = {}) => http.get(url, Object.assign(params));
 
 // 接口说明
 // post示例
@@ -20,4 +19,5 @@ const get = (url:string, params = {}) => http.get(url, Object.assign(params));
 // 常用接口封装
 // 获取配置信息
 
-export const GetSettings = (params:any) => get("getrouters", params);
+export const GetSettings = (params: any) => get("getrouters", params);
+export const SetSettings = (params: any) => post("getrouters", params);
