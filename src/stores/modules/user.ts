@@ -3,9 +3,10 @@ import { defineStore } from "pinia";
 export const useUserStore = defineStore("user", {
   state: () => {
     return {
+      isScreenfull: false,
       userName: "keith",
       id: 7758521,
-      token: "123456678",
+      token: "",
     };
   },
   persist: {

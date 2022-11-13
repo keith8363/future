@@ -9,8 +9,8 @@ export const constantRoutes: RouteRecordRaw[] = [
     component: Layout,
     children: [
       {
-        path: "/",
-        name: "home",
+        path: "",
+        name: "Home",
         meta: { title: "首页" },
         component: () => import("@/views/home/index.vue"),
       },
@@ -19,6 +19,7 @@ export const constantRoutes: RouteRecordRaw[] = [
   {
     path: "/404",
     component: Layout,
+    meta: { title: "404", hidden: true },
     children: [
       {
         path: "",

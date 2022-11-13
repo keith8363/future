@@ -2,7 +2,6 @@
   <div ref="container" class="app-container">
     <!-- 流星元素 -->
     <div class="shooting_star" v-for="item in 12" :key="item" />
-
     <div class="box">
       <div class="title">
         <img src="../../assets/future.png" />
@@ -35,12 +34,30 @@
               prefix-icon="Lock"
             />
           </el-form-item>
-          <el-form-item label="忘记密码?">
-            <a href=":javascrpt;"></a>
+          <el-form-item label="确认密码:" prop="password2" v-show="isForget">
+            <el-input
+              v-model.trim="form.password2"
+              placeholder="Password2"
+              type="password"
+              clearable
+              prefix-icon="Lock"
+            />
+          </el-form-item>
+          <el-form-item v-show="!isForget">
+            <span @click="forget()">忘记密码</span>
           </el-form-item>
           <el-form-item class="btn">
-            <el-button type="primary" @click="submitForm()">登 录</el-button>
-            <el-button type="primary">注 册</el-button>
+            <el-button
+              type="primary"
+              v-show="!isForget"
+              @click="submitForm()"
+              :loading="loading"
+              >登 录</el-button
+            >
+            <el-button type="primary" v-show="!isForget" @click="forget()"
+              >注 册</el-button
+            >
+            <el-button type="primary" v-show="isForget">确 定</el-button>
           </el-form-item>
         </el-form>
       </div>
@@ -50,6 +67,15 @@
 
 <script lang="ts" setup name="Login">
 import { anaList } from "@/utils/get-ana";
+import { FormInstance } from "element-plus";
+import { useUserStore } from "@/stores/modules/user";
+import router from "@/router/index";
+
+const userStore = useUserStore();
+
+onBeforeMount(() => {
+  // userStore.token = "";
+});
 
 const ruleFormRef = ref<FormInstance>();
 
@@ -61,13 +87,27 @@ const validatePass = (rule: any, value: any, callback: any) => {
   }
 };
 
+const validatePass2 = (rule: any, value: any, callback: any) => {
+  if (isForget.value && value === "") {
+    callback(new Error("Please input the password2"));
+  } else if (isForget.value && value !== form.password) {
+    callback(new Error("The password2 must be the same as the first input"));
+  } else {
+    callback();
+  }
+};
+let loading = ref(false);
+
 const num = Math.floor(Math.random() * 6);
 
 const ana = anaList[num];
 
+let isForget = ref(false);
+
 const form = reactive({
-  name: "",
-  password: "",
+  name: "Admin",
+  password: "123456",
+  password2: "",
 });
 
 const rules = reactive({
@@ -78,13 +118,23 @@ const rules = reactive({
     { required: true, trigger: "blur", message: "Please select Your password" },
     { validator: validatePass, trigger: "blur" },
   ],
+  password2: [{ validator: validatePass2, trigger: "blur" }],
 });
+
+const forget = () => {
+  isForget.value = true;
+};
 
 const submitForm = () => {
   if (!ruleFormRef.value) return;
-  ruleFormRef.value.validate((valid) => {
+  ruleFormRef.value.validate((valid: any) => {
     if (valid) {
-      console.log("submit!");
+      loading.value = true;
+      setTimeout(() => {
+        userStore.token = "45678";
+        loading.value = false;
+        router.replace("/");
+      }, 1000);
     } else {
       return false;
     }
@@ -194,19 +244,29 @@ const submitForm = () => {
       }
 
       :deep(.el-form .el-form-item .el-form-item__label) {
-        color: includes(text-color-secondary);
         font-family: "Times New Roman", Times, serif;
         margin-top: 20px;
         width: 300px;
       }
-      :deep(.el-form .el-form-item .el-form-item__content) {
-        display: flex;
-        justify-content: center;
+      :deep(.el-form .btn .el-form-item__content) {
+        display: flex !important;
+        justify-content: center !important;
+      }
+
+      .el-form-item span {
+        padding-left: 5px;
+        font-family: "Times New Roman", Times, serif;
+        font-size: var(--el-form-label-font-size);
+        color: var(--el-text-color-regular);
+
+        &:hover {
+          color: #2a97ff;
+          cursor: pointer;
+        }
       }
     }
   }
 }
-
 @keyframes girl {
   0%,
   100% {

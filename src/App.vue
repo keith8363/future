@@ -1,6 +1,4 @@
-<script setup lang="ts">
-export default {};
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <router-view />

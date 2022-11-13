@@ -2,7 +2,7 @@ const config = {
   /**
    * @type {String}
    */
-  TITLE: "Future",
+  TITLE: "Candies",
 
   /**
    * @type {String}

@@ -27,6 +27,69 @@
   height: 100%;
 }
 
+@mixin primary-color {
+  background-color: #1890ff;
+}  // 全局主色
+
+@mixin link-color {
+  color: #1890ff;
+}  // 链接色
+
+@mixin success-color {
+  color: #52c41a;
+}  // 成功色
+
+@mixin warning-color {
+  color: #faad14;
+} // 警告色
+
+@mixin error-color {
+  color: #f5222d;
+} // 错误色
+
+@mixin error-color {
+  color: #f5222d;
+} // 错误色
+
+@mixin heading-color {
+  color:rgba(0, 0, 0, 0.85);
+} // 标题色
+
+@mixin text {
+  color:rgba(0, 0, 0, 0.65);// 主文本色
+  font-size: 14px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}  
+
+@mixin text-color-secondary {
+  color: rgba(0, 0, 0, 0.45);
+} // 次文本色
+
+@mixin disabled-color {
+  color: rgba(0, 0, 0, 0.25);
+} // 失效色
+
+@mixin border-radius-base {
+  border-radius: 5px;
+} // 组件/浮层圆角
+
+@mixin border-color-base {
+  color: #d9d9d9;
+} // 边框色
+
+@mixin box-shadow-base {
+  box-shadow:0 2px 8px rgba(0, 0, 0, 0.15);
+} // 浮层阴影
+
+@mixin ellipsisBasic($clamp:1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $clamp;
+} // 超出隐藏，默认一行
+
+
 // 使用方法示例
 // div {
 //   @include clearfix

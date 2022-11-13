@@ -1,34 +1,13 @@
 <template>
-    <div class='app-container'>
-       首页
-       <div class="one"></div>
-       <div class="three"></div>
-    <div class="four">
-
-    </div>
-    <div class="five">
-
-    </div>
-    </div>
+  <div class="home"></div>
 </template>
 
-<script  lang='ts'>
-// const router = useRouter()
-// const route = useRoute()
-import {reactive,computed, toRefs,defineComponent,  ref, watchEffect,} from 'vue'
-export default defineComponent({
-name:'Home',
-components:{},
-setup(){
-const state = reactive({})
-watchEffect(() => {})
-return {
-...toRefs(state)
-}
-}
-})
-</script>
+<script lang="ts" setup name="Home"></script>
 
-<style lang='scss' scoped>
-    
+<style lang="scss" scoped>
+.home {
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/girl.png) no-repeat center;
+}
 </style>
