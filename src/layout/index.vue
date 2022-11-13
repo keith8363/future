@@ -7,9 +7,13 @@
     @mouseleave="removeHover"
     @mousedown="removeHover"
   >
-    <div class="btn-left btn"></div>
     <router-view />
-    <div class="btn-right btn"></div>
+    <div class="btn-left" v-show="btnShow">
+      <el-icon :size="40"><ArrowLeftBold /></el-icon>
+    </div>
+    <div class="btn-right" v-show="btnShow">
+      <el-icon :size="40"><ArrowRightBold /></el-icon>
+    </div>
   </div>
   <FuFooter></FuFooter>
 </template>
@@ -24,16 +28,14 @@ components: {
   FuFooter;
 }
 //  主屏幕左右按钮
-const dom = document.getElementsByClassName("btn");
+const btnShow = ref(false);
 
 const addHover = () => {
-  dom[0]?.classList.add("hover");
-  dom[1]?.classList.add("hover");
+  btnShow.value = true;
 };
 
 const removeHover = () => {
-  dom[0]?.classList.remove("hover");
-  dom[1]?.classList.remove("hover");
+  btnShow.value = false;
 };
 </script>
 
@@ -46,21 +48,21 @@ const removeHover = () => {
 
   .btn-left,
   .btn-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 30%;
     width: 50px;
     height: 300px;
-    color: transparent;
-  }
-
-  .hover {
     @include border-radius-base;
     @include border-color-base;
     @include box-shadow-base;
     background-color: rgba(000, 000, 000, 0.2);
-
     &:hover {
       background-color: rgba(000, 000, 000, 0.3);
+      color: #fff;
+      cursor: pointer;
     }
   }
 
