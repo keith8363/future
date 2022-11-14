@@ -4,7 +4,7 @@
     <div class="shooting_star" v-for="item in 12" :key="item" />
     <div class="box">
       <div class="title">
-        <img src="../../assets/future.png" />
+        <img src="../../assets/candies.png" />
         <div class="contant">{{ ana.text }}</div>
         <div class="author" v-if="ana.author">{{ "--" + ana.author }}</div>
       </div>
@@ -205,12 +205,8 @@ const submitForm = () => {
       box-sizing: border-box;
       padding: 30px 10px;
 
-      img {
-        margin-left: 430px;
-      }
-
       .contant {
-        margin-top: -20px;
+        margin-top: 20px;
         width: 300px;
         color: #75767a;
         text-indent: 2rem;

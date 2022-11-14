@@ -59,9 +59,9 @@ const removeHover = () => {
     @include border-color-base;
     @include box-shadow-base;
     background-color: rgba(000, 000, 000, 0.2);
+    color: #fff;
     &:hover {
       background-color: rgba(000, 000, 000, 0.3);
-      color: #fff;
       cursor: pointer;
     }
   }
