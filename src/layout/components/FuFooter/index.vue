@@ -8,9 +8,12 @@ const userStore = useUserStore();
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/mixin.scss";
 .fu-footer {
   height: 50px;
   width: 100%;
-  background-color: #30ffff;
+  background-image: linear-gradient(to bottom, #fff, #30ffff);
+  @include box-shadow-base;
+  @include border-color-base;
 }
 </style>

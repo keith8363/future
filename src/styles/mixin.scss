@@ -59,7 +59,11 @@
   color:rgba(0, 0, 0, 0.65);// 主文本色
   font-size: 14px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}  
+}
+
+@mixin text-famliy-base {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
 @mixin text-color-secondary {
   color: rgba(0, 0, 0, 0.45);

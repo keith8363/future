@@ -22,6 +22,8 @@ declare module '@vue/runtime-core' {
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    ElTag: typeof import('element-plus/es')['ElTag']
+    ElTooltip: typeof import('element-plus/es')['ElTooltip']
     HelloWorld: typeof import("./src/components/HelloWorld.vue")["default"]
     IEpPlus: typeof import("~icons/ep/plus")["default"]
     IFuplus: typeof import("~icons/fu/plus")["default"]

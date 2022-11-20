@@ -1,18 +1,18 @@
 import { Layout } from "../layout";
 export default [
   {
-    path: "/echarts",
-    name: "Echarts",
+    path: "/three",
+    name: "Three",
     component: Layout,
     meta: {
-      title: "Echarts",
+      title: "Three",
       icon: "",
     },
     children: [
       {
+        name: "Three",
         path: "/",
-        name: "Echarts",
-        component: () => import("@/views/Echarts/index.vue"),
+        component: () => import("@/views/Three/index.vue"),
       },
     ],
   },

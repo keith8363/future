@@ -8,7 +8,7 @@ export const useUserStore = defineStore("user", {
       userName: "keith", // 用户名
       id: 7758521,
       token: "",
-      beLike: [],
+      collectList: ["Three"],
     };
   },
   persist: {

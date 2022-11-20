@@ -3,6 +3,8 @@
     <div class="module">
       <img src="../../../assets/logo.png" alt="" />
       {{ $CONFIG.TITLE }}
+      <span class="page-break">/</span>
+      <span class="page-title">{{ $route.meta.title }}</span>
     </div>
     <div class="toolbar">
       <el-icon style="vertical-align: middle" @click="screenfull.toggle()">
@@ -54,27 +56,37 @@ const go = (where: string) => {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/mixin.scss";
 .fu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 50px;
   width: 100%;
-  background-color: #30ffff;
   padding: 0 10px;
-  border: 1px solid #ccc;
-  font-size: 24px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: 700;
-  color: #3641ff;
+  background-image: linear-gradient(to bottom, #30ffff, #f2f2f2);
+  border-bottom: none;
 
-  .module img {
-    width: 50px;
-    height: 50px;
-    vertical-align: bottom;
+  .module {
+    font-size: 24px;
+    font-weight: 700;
+    @include text-famliy-base;
+    color: #3641ff;
+    img {
+      width: 50px;
+      height: 50px;
+      vertical-align: bottom;
+    }
+    .page-break {
+      color: #acdddd;
+      margin: 0 10px;
+    }
+    .page-title {
+      font-size: 16px;
+      font-weight: 500;
+    }
   }
 
-  .language,
   .toolbar {
     display: flex;
     justify-content: flex-start;
