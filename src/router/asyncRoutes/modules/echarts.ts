@@ -2,15 +2,14 @@ import { Layout } from "../layout";
 export default [
   {
     path: "/echarts",
-    name: "Echarts",
     component: Layout,
     meta: {
       title: "Echarts",
-      icon: "",
     },
+    redirect: "/echarts",
     children: [
       {
-        path: "/",
+        path: "",
         name: "Echarts",
         component: () => import("@/views/Echarts/index.vue"),
       },

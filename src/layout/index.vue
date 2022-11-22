@@ -3,7 +3,7 @@
     <FuHeader></FuHeader>
     <UserOper></UserOper>
     <div class="main" @mousemove="addHover" @mouseleave="removeHover">
-      <router-view />
+      <router-view :key="key" />
       <div
         class="btn-left"
         v-show="btnShow"
@@ -32,7 +32,7 @@
           v-show="showbtn"
         ></i>
       </el-tooltip>
-      <el-tooltip
+      <!-- <el-tooltip
         class="box-item"
         effect="dark"
         content="案例入口"
@@ -43,7 +43,7 @@
           @click="entrance"
           v-show="showbtn"
         ></i>
-      </el-tooltip>
+      </el-tooltip> -->
     </div>
     <FuFooter></FuFooter>
   </div>
@@ -53,7 +53,7 @@ import FuHeader from "./components/FuHeader/index.vue";
 import UserOper from "./components/UserOper/index.vue";
 import FuFooter from "./components/FuFooter/index.vue";
 import menuList from "@/router/asyncRoutes";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 import { getPath } from "@/utils/get-path";
 import { storeToRefs } from "pinia";
 import { useUserStore } from "@/stores/modules/user";
@@ -62,6 +62,7 @@ components: {
   UserOper;
   FuFooter;
 }
+
 //  主屏幕左右按钮及其功能
 const btnShow = ref(false);
 
@@ -81,9 +82,14 @@ menuList.forEach((i) => {
 
 const newMenu = [...menu.values()];
 
-newMenu.unshift("/");
+newMenu.unshift("/home");
 
 const router = useRouter();
+const route = useRoute();
+
+const key = computed(() => {
+  return route.path;
+});
 
 const go = (currentRoute: string, diraction: string) => {
   const currentIndex = newMenu.indexOf(currentRoute);
@@ -126,11 +132,6 @@ watch(
     });
   }
 );
-
-// 案例入口
-const entrance = () => {
-  alert("案例入口");
-};
 </script>
 
 <style scoped lang="scss">

@@ -5,6 +5,7 @@ import "@/styles/index.scss";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 import svgIcon from "@/components/SvgIcon/index.vue";
 import "virtual:svg-icons-register";
+
 import App from "./App.vue";
 
 import config from "@/setting";

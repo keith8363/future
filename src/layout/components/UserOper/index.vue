@@ -82,6 +82,7 @@ const close = (item: string) => {
     justify-content: flex-start;
     align-items: center;
     overflow-x: auto;
+
     .el-tag {
       margin-left: 5px;
       &:hover {
