@@ -6,6 +6,7 @@ export default [
     meta: {
       title: "Echarts",
     },
+    name: "Echarts",
     redirect: "/echarts",
     children: [
       {

@@ -29,6 +29,9 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   (config) => {
+    if (token.value !== "") {
+      config.headers.Authorization = token as any;
+    }
     return config;
   },
   (error) => {
@@ -38,9 +41,8 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   (response) => {
-    console.log(response);
     const res = response.data;
-    if (res.code === 200) {
+    if (response.status === 200) {
       return res;
     } else {
       ElMessage({

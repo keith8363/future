@@ -1,3 +1,4 @@
+// 控制layout组件左右按钮路由跳转效果
 export const getPath = (
   currentIndex: number,
   routerMenu: Array<string>,

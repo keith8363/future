@@ -109,7 +109,7 @@ const isCollected = computed(() => {
   return collectList.value.includes(name);
 });
 
-const showbtn = computed(() => router.currentRoute.value.path !== "/");
+const showbtn = computed(() => router.currentRoute.value.path !== "/home");
 const collect = () => {
   const name = router.currentRoute.value.name as string;
   if (isCollected.value) {
