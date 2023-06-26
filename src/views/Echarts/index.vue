@@ -17,8 +17,8 @@ import { getEchartsConfig } from "@/utils/get-echarts-config";
 
 const myEcharts = ref();
 let echartsData = ref();
-const getData = async () => {
-  await getMap().then((res: any) => {
+const getData = () => {
+  getMap().then((res: any) => {
     initMap("中国地图", res, "map");
     echartsData = res;
   });
@@ -36,6 +36,7 @@ const initMap = (name: string, data: any, type: string) => {
   }
   echarts.registerMap(name, data);
   myChart = echarts.init(myEcharts.value);
+  myChart.clear();
   const config = getEchartsConfig(type, name, myChart);
 
   const option = {

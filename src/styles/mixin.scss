@@ -94,7 +94,34 @@
 } // 超出隐藏，默认一行
 
 
+@mixin board {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-moz-scrollbar {
+    display: none;
+  }
+
+  &::-o-scrollbar {
+    display: none;
+  }
+
+  &::-ms-scrollbar {
+    display: none;
+  }
+}
+
+
 // 使用方法示例
 // div {
 //   @include clearfix
 // }
+
+
