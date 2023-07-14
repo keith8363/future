@@ -5,6 +5,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
+   // 将jsx文件编译为React.createElement函数的调用
     "jsx": "preserve",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -17,8 +18,8 @@
       "@/*":["src/*"],
       "components/*":["src/components/*"],
       "#":["src/types/*"]
-    }
+    },
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.js","src/types/env.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.js","src/types/env.d.ts", "src/utils/get-menu.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

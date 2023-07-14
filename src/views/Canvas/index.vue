@@ -12,7 +12,7 @@ export default defineComponent({
   setup() {
     let canvas = ref();
     let particles: Array<any> = [];
-    let ctx = ref<HTMLCanvasElement>();
+    let ctx = ref<CanvasRenderingContext2D>();
 
     onMounted(() => {
       initCanvasSize();
@@ -26,7 +26,7 @@ export default defineComponent({
       // 获取上下文、设置只读模式提高性能
       ctx = canvas.value?.getContext("2d", {
         willReadFrequently: true,
-      });
+      }) as CanvasRenderingContext2D;
 
       begin();
     };

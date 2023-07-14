@@ -28,6 +28,7 @@ declare module '@vue/runtime-core' {
     IEpPlus: typeof import("~icons/ep/plus")["default"]
     IFuplus: typeof import("~icons/fu/plus")["default"]
     IFuPlus: typeof import("~icons/fu/plus")["default"]
+    Menus: typeof import('./src/components/Menus/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']

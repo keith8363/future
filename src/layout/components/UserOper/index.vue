@@ -1,6 +1,6 @@
 <template>
   <div class="user-oper" v-show="!userStore.isScreenfull">
-    <el-dropdown>
+    <!-- <el-dropdown>
       <span class="el-dropdown-link">
         案例菜单
         <el-icon class="el-icon--right">
@@ -17,7 +17,7 @@
           >
         </el-dropdown-menu>
       </template>
-    </el-dropdown>
+    </el-dropdown> -->
     <div class="Tips">
       <el-tag
         :type="list[Math.floor(Math.random() * 6)]"

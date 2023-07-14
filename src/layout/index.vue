@@ -32,6 +32,9 @@
           v-show="showbtn"
         ></i>
       </el-tooltip>
+      <el-button size="mini" @click="getMenus" class="menus-btn" round
+        >菜单</el-button
+      >
       <!-- <el-tooltip
         class="box-item"
         effect="dark"
@@ -57,6 +60,7 @@ import { useRouter, useRoute } from "vue-router";
 import { getPath } from "@/utils/get-path";
 import { storeToRefs } from "pinia";
 import { useUserStore } from "@/stores/modules/user";
+import getMenus from "@/utils/get-menu";
 components: {
   FuHeader;
   UserOper;
@@ -196,6 +200,12 @@ watch(
     .icon-shoucang,
     .icon-shoucang1 {
       top: 30px;
+    }
+
+    .menus-btn {
+      position: fixed;
+      top: 110px;
+      right: 10px;
     }
   }
 }
