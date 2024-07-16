@@ -7,6 +7,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Bar: typeof import('./src/components/Echarts/bar.vue')['default']
+    BarLine: typeof import('./src/components/Echarts/barLine.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElContainer: typeof import('element-plus/es')['ElContainer']
@@ -21,16 +23,28 @@ declare module '@vue/runtime-core' {
     ElMain: typeof import('element-plus/es')['ElMain']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElTag: typeof import('element-plus/es')['ElTag']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    Funnel: typeof import('./src/components/Echarts/funnel.vue')['default']
+    Graph: typeof import('./src/components/Echarts/graph.vue')['default']
     HelloWorld: typeof import("./src/components/HelloWorld.vue")["default"]
     IEpPlus: typeof import("~icons/ep/plus")["default"]
     IFuplus: typeof import("~icons/fu/plus")["default"]
     IFuPlus: typeof import("~icons/fu/plus")["default"]
+    Line: typeof import('./src/components/Echarts/line.vue')['default']
+    Map: typeof import('./src/components/Echarts/map.vue')['default']
     Menus: typeof import('./src/components/Menus/index.vue')['default']
+    Pie: typeof import('./src/components/Echarts/pie.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Scatter: typeof import('./src/components/Echarts/scatter.vue')['default']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
+    TopBar: typeof import('./src/components/Echarts/topBar.vue')['default']
+    Waterfall: typeof import('./src/components/Echarts/waterfall.vue')['default']
+  }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }

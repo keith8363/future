@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="Home">
     <p class="describle">{{ describle }}</p>
     <div class="author">
       <span class="title">Author:</span>
@@ -10,9 +10,9 @@
 </template>
 
 <script lang="ts" setup name="Home">
-import Pot from "./components/Pot/index.vue";
 import { useUserStore } from "@/stores/modules/user";
 import { storeToRefs } from "pinia";
+import Pot from "./components/Pot/index.vue";
 components: {
   Pot;
 }
@@ -22,7 +22,7 @@ const { userName, describle } = storeToRefs(userStore);
 
 <style lang="scss" scoped>
 @import "@/styles/mixin.scss";
-.home {
+.Home {
   @include relative;
   width: 100%;
   height: 100%;

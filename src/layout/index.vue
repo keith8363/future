@@ -52,15 +52,15 @@
   </div>
 </template>
 <script lang="ts" name="Layout" setup>
-import FuHeader from "./components/FuHeader/index.vue";
-import UserOper from "./components/UserOper/index.vue";
-import FuFooter from "./components/FuFooter/index.vue";
 import menuList from "@/router/asyncRoutes";
-import { useRouter, useRoute } from "vue-router";
-import { getPath } from "@/utils/get-path";
-import { storeToRefs } from "pinia";
 import { useUserStore } from "@/stores/modules/user";
 import getMenus from "@/utils/get-menu";
+import { getPath } from "@/utils/get-path";
+import { storeToRefs } from "pinia";
+import { useRoute, useRouter } from "vue-router";
+import FuFooter from "./components/FuFooter/index.vue";
+import FuHeader from "./components/FuHeader/index.vue";
+import UserOper from "./components/UserOper/index.vue";
 components: {
   FuHeader;
   UserOper;
@@ -86,7 +86,7 @@ menuList.forEach((i) => {
 
 const newMenu = [...menu.values()];
 
-newMenu.unshift("/home");
+newMenu.unshift("/Home");
 
 const router = useRouter();
 const route = useRoute();
@@ -113,7 +113,7 @@ const isCollected = computed(() => {
   return collectList.value.includes(name);
 });
 
-const showbtn = computed(() => router.currentRoute.value.path !== "/home");
+const showbtn = computed(() => router.currentRoute.value.path !== "/Home");
 const collect = () => {
   const name = router.currentRoute.value.name as string;
   if (isCollected.value) {

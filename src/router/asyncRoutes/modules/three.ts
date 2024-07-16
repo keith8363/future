@@ -1,9 +1,7 @@
-import { Layout } from "../layout";
 export default [
   {
     path: "/three",
     name: "Three",
-    component: Layout,
     meta: {
       title: "Three",
       icon: "",
@@ -11,7 +9,7 @@ export default [
     children: [
       {
         name: "Three",
-        path: "/",
+        path: "",
         component: () => import("@/views/Three/index.vue"),
       },
     ],

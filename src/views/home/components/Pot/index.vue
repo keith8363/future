@@ -31,7 +31,7 @@ const tecList = reactive([
   },
   {
     name: "TypeScript",
-    site: "https://www.tslang.cn/docs/home.html",
+    site: "https://www.tslang.cn/docs/Home.html",
   },
 ]);
 </script>
