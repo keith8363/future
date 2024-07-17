@@ -176,11 +176,10 @@ import DepartmentCard from '@/components/DepartmentCard/index.vue'
 import Switch from '@/components/Switch/index.vue'
 import myFixed from '@/utils/toFixed'
 import { ElMessage } from 'element-plus'
-import { computed, onMounted, onUnmounted, reactive, ref } from 'vue'
+import { computed, onMounted, reactive, ref } from 'vue'
 import { SlideShow, dealHeader } from './config'
 import { getDiggingsInfo, getProductOutputTrend, localStorageItem, slideShowInfo } from './mock'
 
-const currtimecurrtime =  new Date()
 const isSlideShow = ref(true)
 
 const bodyInfo = reactive({
@@ -191,7 +190,6 @@ const bodyInfo = reactive({
 const note = computed(()=>{
   return bodyInfo.allInfo.currentTable.data[bodyInfo.allInfo.companyIndex]?.week_date_note || '--'
 })
-
 
 const getCompanyInfo = async(type:string,date:string,short_name:string,factory:string,element_name:string,where:string,index?:number) => {
   bodyInfo.allInfo.loading = true
@@ -219,10 +217,15 @@ const getCompanyInfo = async(type:string,date:string,short_name:string,factory:s
 
       getTrend(date,firstMetal)
     }else{
+
       if(bodyInfo.time<=2){
+
         getCompanyInfo('产品产量',bodyInfo.allInfo.time,'1','0','1','company',index)
+
         bodyInfo.time++
+
       }else{
+
         ElMessage({
           message: '数据加载异常...',
           type: 'warning',
@@ -256,8 +259,6 @@ const getTrend = async(biz_date:string,metal:String) => {
   
 }
 
-let monitor:any
-let timer:any
 onMounted(()=>{
   localStorage.setItem('mapInfo',localStorageItem)
   localStorage.setItem('slideShowInfo',slideShowInfo)
@@ -271,10 +272,7 @@ onMounted(()=>{
 
 })
 
-onUnmounted(()=>{
-  monitor()
-  clearInterval(timer)
-})
+
 
 </script>
 
