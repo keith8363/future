@@ -118,10 +118,49 @@
   }
 }
 
+@mixin btn_2_0 {
+  box-sizing: border-box;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  font-size: 18px;
+  color: #6871E9;
+  padding: 6px 36px;
+  background-image: linear-gradient(180deg, #F3F5FF 0%, #D6DEFF 100%);
+  border: 1px solid #b9c0ffe6;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 #7f89d752;
+  margin-left: 18px;
 
-// 使用方法示例
-// div {
-//   @include clearfix
-// }
+  &.active {
+    color: #FFFFFF;
+    background-image: linear-gradient(180deg, #8C97FF 0%, #707CF7 100%);
+    // border: 2px solid #6a70be80;
+    box-shadow: 0 6px 8px 0 #7f89d799;
+  }
+}
+
+@mixin card_count_blank {
+  font-family: DIN-Bold;
+  font-weight: 700;
+  font-size: 24px;
+  color: #0B0F5A;
+}
+
+@mixin card_text {
+  font-size: 18px;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #5B6276;
+}
+
+@mixin green {
+  color:rgba(112, 206, 150);
+}
+
+@mixin red {
+  color:#ff7076;
+}
+
 
 

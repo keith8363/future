@@ -1,4 +1,3 @@
-// import { api_jsc_project_dept, api_jsc_project_group } from '@/api/EquipmentComprehensiveAdministration.ts';
 // 左中
 export const urlEnum = {
   '境内矿山': new URL('@/assets/EquipmentComprehensiveAdministration/leftCenter1.png',import.meta.url).href,
@@ -99,57 +98,3 @@ export class dealFun {
 
 }
 
-/**
- * 集团页接口聚合
- * @param index_type 
- * @returns 
- */
-// export const getData = (index_type:string,cn_or_ncn:string='1') => {
-//   return new Promise((resolve,reject)=>{
-//     const params = {
-//       cn_or_ncn,
-//       index_type,
-//       biz_date:moment(new Date()).format('YYYY')
-//     }
-//     api_jsc_project_group({params}).then(res=>{
-//       if(res.code == 200){
-//         resolve(res.data)
-//       }else{
-//         ElNotification.error({
-//           title:`${index_type}数据请求失败`,
-//           message:res.msg
-//         })
-//       }
-//     }).catch(err=>{
-//       reject(err)
-//     })
-//   })
-// }
-
-/**
- * 集团页接口聚合
- * @param index_type 
- * @param company_name 
- * @returns 
- */
-// export const getOvershipData = (index_type:string,company_name:string) => {
-//   return new Promise((resolve,reject)=>{
-//     const params = {
-//       index_type,
-//       company_name,
-//       biz_date:moment(new Date()).format('YYYY')
-//     }
-//     api_jsc_project_dept({params}).then(res=>{
-//       if(res.code == 200){
-//         resolve(res.data)
-//       }else{
-//         ElNotification.error({
-//           title:`${index_type}数据请求失败`,
-//           message:res.msg
-//         })
-//       }
-//     }).catch(err=>{
-//       reject(err)
-//     })
-//   })
-// }

@@ -341,7 +341,6 @@
 </template>
 
 <script  lang='ts' setup>
-// import { api_jsc_project_group_bjzt, api_jsc_project_group_map } from '@/api/EquipmentComprehensiveAdministration.ts';
 import moment from 'moment';
 import { computed, reactive, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
@@ -735,13 +734,13 @@ const Fun14 = (name:any) => {
 
 
 watch(
-()=>route.query,
-()=>{
-!query.value ? initGrounp(ServiceStatistics.id.toString()) : initOvershipStatistics()
-},
-{
-immediate:true
-}
+  ()=>route.query,
+  ()=>{
+  !query.value ? initGrounp(ServiceStatistics.id.toString()) : initOvershipStatistics()
+  },
+  {
+  immediate:true
+  }
 )
 
 watch(
