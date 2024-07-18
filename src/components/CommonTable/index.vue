@@ -603,11 +603,12 @@ export default defineComponent({
 .el-table {
 	width: 100%;
 
-	--el-table-border-color: transparent !important;
+	border-radius: 5px;
+	--el-table-border-color: #dbe2ee !important;
 	--el-table-row-hover-bg-color: transparent !important;
 	--el-table-bg-color: transparent !important;
-	--el-table-header-bg-color: transparent !important;
-	--el-table-tr-bg-color: transparent !important;
+	--el-table-header-bg-color: #d5e3fe !important;
+	--el-table-tr-bg-color: #f4eaea !important;
 
 	::v-deep(.el-table__header) {
 		.cell {

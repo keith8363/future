@@ -60,6 +60,7 @@ const tecList = reactive([
       sans-serif;
     font-size: 16px;
     font-weight: 700;
+    color:#fff;
   }
 
   a:nth-child(1) {

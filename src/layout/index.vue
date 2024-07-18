@@ -4,20 +4,20 @@
     <UserOper></UserOper>
     <div class="main" @mousemove="addHover" @mouseleave="removeHover">
       <router-view :key="key" />
-      <div
+      <!-- <div
         class="btn-left"
         v-show="btnShow"
         @click="go($router.currentRoute.value.path, 'left')"
       >
         <el-icon :size="40"><ArrowLeftBold /></el-icon>
-      </div>
-      <div
+      </div> -->
+      <!-- <div
         class="btn-right"
         v-show="btnShow"
         @click="go($router.currentRoute.value.path, 'right')"
       >
         <el-icon :size="40"><ArrowRightBold /></el-icon>
-      </div>
+      </div> -->
       <el-tooltip
         class="box-item"
         effect="dark"
@@ -145,6 +145,8 @@ watch(
   display: flex;
   flex-direction: column;
   height: 100%;
+  // background: #f2e8e6;
+  background: linear-gradient(to bottom, #beabcb,#201f45);
 
   .main {
     @include relative;

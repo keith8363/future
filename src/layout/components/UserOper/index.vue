@@ -30,15 +30,15 @@
         >{{ item }}</el-tag
       >
     </div>
-    <div class="userBtn">个人中心</div>
+    <!-- <div class="userBtn">个人中心</div> -->
   </div>
 </template>
 
 <script lang="ts" setup name="UserOper">
 import menuList from "@/router/asyncRoutes";
 import { useUserStore } from "@/stores/modules/user";
-import { useRouter } from "vue-router";
 import { storeToRefs } from "pinia";
+import { useRouter } from "vue-router";
 
 const userStore = useUserStore();
 const router = useRouter();
@@ -67,6 +67,8 @@ const close = (item: string) => {
   height: 50px;
   background-image: linear-gradient(to bottom, #f2f2f2, #fff);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
   .el-dropdown,
   .userBtn {
     display: flex;

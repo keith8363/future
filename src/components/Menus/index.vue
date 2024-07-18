@@ -11,9 +11,9 @@
 </template>
 
 <script lang="ts">
-import { useRouter } from "vue-router";
-import { defineComponent } from "vue";
 import menuList from "@/router/asyncRoutes";
+import { defineComponent } from "vue";
+import { useRouter } from "vue-router";
 export default defineComponent({
   name: "Menus",
   components: {},
@@ -112,15 +112,17 @@ export default defineComponent({
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 40%;
-  height: 30%;
+  width: 50%;
+  height: 40%;
   border-radius: 50% 30% 40% 35%;
   transform: translate(-50%, -50%);
   padding: 20px;
   background: url(../../assets/candies_menus_bg.jpeg) repeat;
   background-position: cover;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  border: 2px double silver;
+  border: 10px double silver;
+  z-index: 9999;
+
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
       rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;

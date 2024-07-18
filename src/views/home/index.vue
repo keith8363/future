@@ -26,8 +26,9 @@ const { userName, describle } = storeToRefs(userStore);
   @include relative;
   width: 100%;
   height: 100%;
-  background: url(../../assets/pie.jpeg) no-repeat center;
+  background: url(@/assets/girl.png) no-repeat center;
   background-size: cover;
+
   .describle {
     position: absolute;
     top: 30px;
@@ -37,6 +38,7 @@ const { userName, describle } = storeToRefs(userStore);
     @include text;
     font-size: 18px;
   }
+
   .author {
     position: absolute;
     left: 50%;
@@ -44,12 +46,14 @@ const { userName, describle } = storeToRefs(userStore);
     transform: translateX(-50%);
     height: 50px;
     line-height: 50px;
+
     .title {
       @include heading-color;
       margin-right: 10px;
       font-size: 36px;
       font-weight: 700;
     }
+
     .name {
       @include text-color-secondary;
     }

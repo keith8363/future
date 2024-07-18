@@ -652,7 +652,7 @@ export class SlideShow {
     if(time===3000){
       this.timer = setInterval(()=>{
         // 暂定逻辑企业停留3秒内只展示完成率
-        this.currentBtnIndex ? (this.currentBtnIndex = 0) : (this.currentBtnIndex = 0)
+        this.currentBtnIndex = 0
         this.getCurrentProductOutput(metal) 
         const len = this.currentTable.data.length
         if(len>0){

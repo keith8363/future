@@ -12,6 +12,8 @@ const userStore = useUserStore();
 .fu-footer {
   height: 50px;
   width: 100%;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
   background-image: linear-gradient(to bottom, #fff, #30ffff);
   @include box-shadow-base;
   @include border-color-base;
