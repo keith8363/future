@@ -1,10 +1,11 @@
 
-import config from '@/config'
-
+import { useCurrentInstance } from "@/utils/use-currentInstance";
+const { proxy } = useCurrentInstance();
+const { $CONFIG } = proxy;
 const { 
         RATE_DECIMAL_PLACES:rate,
         OUTPUT_DECIMAL_PLACES:output
-      } = config
+      } = $CONFIG
 
       
 /**

@@ -1,11 +1,14 @@
-import config from '@/config';
+import { useCurrentInstance } from "@/utils/use-currentInstance";
 import CryptoJS from 'crypto-js';
 
+const { proxy } = useCurrentInstance();
+const { $CONFIG } = proxy;
+
 // 设置密匙
-const SECRET_KEY = CryptoJS.enc.Utf8.parse(config.LS_ENCRYPTION_KEY);
+const SECRET_KEY = CryptoJS.enc.Utf8.parse($CONFIG.LS_ENCRYPTION_KEY);
 
 // 设置密匙偏移量
-const SECRET_IV = CryptoJS.enc.Utf8.parse(config.LS_ENCRYPTION_KEY);
+const SECRET_IV = CryptoJS.enc.Utf8.parse($CONFIG.LS_ENCRYPTION_KEY);
 
 /**
  * 数据加密
