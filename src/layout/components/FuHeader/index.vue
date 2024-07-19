@@ -34,9 +34,10 @@
 </template>
 
 <script lang="ts" setup name="FuHeader">
-import screenfull from "screenfull";
+import router from "@/router/index";
 import { useUserStore } from "@/stores/modules/user";
 import { useCurrentInstance } from "@/utils/use-currentInstance";
+import screenfull from "screenfull";
 
 // 全屏处理
 const userStore = useUserStore();
@@ -49,9 +50,13 @@ const { proxy } = useCurrentInstance();
 const { $CONFIG } = proxy;
 
 // 用户操作按钮
-const menuList = reactive(["个人中心", "退出登录"]);
+const menuList = reactive(["个人中心", "退出登陆"]);
+
 const go = (where: string) => {
-  console.log(where);
+  if(where === '退出登陆'){
+    router.push('/login')
+    userStore.token = ''
+  }
 };
 </script>
 

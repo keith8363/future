@@ -48,10 +48,10 @@
           </el-form-item>
           <el-form-item class="btn">
             <el-button
-              type="primary"
               v-show="!isForget"
-              @click="submitForm()"
+              type="primary"
               :loading="loading"
+              @click="submitForm()"
               >登 录</el-button
             >
             <el-button type="primary" v-show="!isForget" @click="forget()"
@@ -66,10 +66,10 @@
 </template>
 
 <script lang="ts" setup name="Login">
+import router from "@/router/index";
+import { useUserStore } from "@/stores/modules/user";
 import { anaList } from "@/utils/get-ana";
 import { FormInstance } from "element-plus";
-import { useUserStore } from "@/stores/modules/user";
-import router from "@/router/index";
 
 const userStore = useUserStore();
 

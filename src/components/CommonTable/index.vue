@@ -610,7 +610,7 @@ export default defineComponent({
 	--el-table-header-bg-color: #d5e3fe !important;
 	--el-table-tr-bg-color: #f4eaea !important;
 
-	::v-deep(.el-table__header) {
+	:deep(.el-table__header) {
 		.cell {
 			font-family: PingFangSC-Regular;
 			font-weight: 400;
@@ -620,11 +620,11 @@ export default defineComponent({
 		}
 	}
 
-	::v-deep(.el-table__body-wrapper) {
+	:deep(.el-table__body-wrapper) {
 		order: 0; // 合计行位置
 	}
 
-	::v-deep(.el-table__body) {
+	:deep(.el-table__body) {
 		.el-table__row {
 			font-family: DIN-Bold;
 			font-weight: 700;

@@ -214,7 +214,6 @@ export default function(mergedCells:Array<object>,list:Array<object>,title:strin
     })
     return false
   }
-  console.log(utils)
   const ws = utils.json_to_sheet([])
 
   const newList = JSON.parse(JSON.stringify(list))

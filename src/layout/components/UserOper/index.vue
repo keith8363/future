@@ -1,24 +1,6 @@
 <template>
   <div class="user-oper" v-show="!userStore.isScreenfull">
-    <!-- <el-dropdown>
-      <span class="el-dropdown-link">
-        案例菜单
-        <el-icon class="el-icon--right">
-          <arrow-down />
-        </el-icon>
-      </span>
-      <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item
-            v-for="(item, index) in menuList"
-            :key="index"
-            @click="$router.push(item.path)"
-            >{{ item.name }}</el-dropdown-item
-          >
-        </el-dropdown-menu>
-      </template>
-    </el-dropdown> -->
-    <div class="Tips">
+    <div class="user-oper-tips">
       <el-tag
         :type="list[Math.floor(Math.random() * 6)]"
         v-for="(item, index) in collectList"
@@ -30,7 +12,6 @@
         >{{ item }}</el-tag
       >
     </div>
-    <!-- <div class="userBtn">个人中心</div> -->
   </div>
 </template>
 
@@ -41,7 +22,9 @@ import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 
 const userStore = useUserStore();
+
 const router = useRouter();
+
 const { collectList } = storeToRefs(userStore);
 
 const list = ["", "success", "info", "warning", "danger"];
@@ -69,26 +52,20 @@ const close = (item: string) => {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   border-radius: 0 0 20px 20px;
   overflow: hidden;
-  .el-dropdown,
-  .userBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 100%;
-    @include text;
-  }
-  .Tips {
+
+  .user-oper-tips {
     flex: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     overflow-x: auto;
+    padding: 0 10px;
 
     .el-tag {
       margin-left: 5px;
       &:hover {
         cursor: pointer;
+        border: 1px solid #5cc5fc;
       }
     }
   }
