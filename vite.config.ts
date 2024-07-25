@@ -28,11 +28,12 @@ export default defineConfig(({ mode }) => {
   return {
     open: true, // 是否自动在浏览器打开
     // root, // 项目根路径(index.html文件所在的位置)
-    base: "/", // 公共基础路径
+    base: "./", // 公共基础路径
     // mode: "development", // 默认"development"用于开发,"production"用于构建
     define: {
       __APP_ENV__: env.APP_ENV,
     },
+    publicPath:'./',
     plugins: [
       vue(),
       createSvgIconsPlugin({
