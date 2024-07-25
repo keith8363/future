@@ -85,7 +85,7 @@ export default defineConfig(({ mode }) => {
       reportCompressedSize: true, // 启用gzip压缩大小报告(禁用时可提高构建大型项目的性能)
       rollupOptions: {
         input:{
-          entry:resolve(__dirname,'/src/index.html')
+          entry:resolve(__dirname,'/index.html')
         },
         // 自定义底层的 Rollup 打包配置
         output: {
