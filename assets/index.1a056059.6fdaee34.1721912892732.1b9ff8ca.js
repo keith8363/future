@@ -1,0 +1,1 @@
+import{A as s,c as r,aG as e,aH as n,m as t,O as o,N as c}from"./index.84a6fe3f.js";const p=s({name:"404",components:{},setup(){const a=r({});return e(()=>{}),{...n(a)}}}),m={class:"app-container"},A=t(p,[["render",function(a,u,i,d,f,O){return o(),c("div",m," 404 ")}]]);export{A as default};
