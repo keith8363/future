@@ -76,62 +76,62 @@ export default defineConfig(({ mode }) => {
     },
     // 构建打包时配置选项
     build: {
-      target: "modules", // 浏览器兼容目标
+      // target: "modules", // 浏览器兼容目标
       outDir: "dist", // 指定输出路径（相对于 项目根目录)
-      assetsDir: "assets", // 静态资源得存放路径文件名
-      sourcemap: false, // 构建后是否生成 source map 文件
-      chunkSizeWarningLimit: 1500, // 规定触发警告的 chunk(文件块) 大小
+      // assetsDir: "assets", // 静态资源得存放路径文件名
+      // sourcemap: false, // 构建后是否生成 source map 文件
+      // chunkSizeWarningLimit: 1500, // 规定触发警告的 chunk(文件块) 大小
       minify: "terser", // 混淆器，terser构建后文件体积更小
-      reportCompressedSize: true, // 启用gzip压缩大小报告(禁用时可提高构建大型项目的性能)
-      rollupOptions: {
-        input:{
-          entry:resolve(__dirname,'index.html'),
-          main: resolve(__dirname, 'src/main.ts'),
-        },
-        // 自定义底层的 Rollup 打包配置
-        output: {
-          entryFileNames: `assets/[name].${new Date().getTime()}.js`,
-          chunkFileNames: `assets/[name].${new Date().getTime()}.js`,
-          assetFileNames: `assets/[name].${new Date().getTime()}.[ext]`,
-          compact: true,
-          manualChunks: {
-            vue: ["vue", "vue-router", "pinia"],
-            echarts: ["echarts"],
-          },
-        },
-      },
+      // reportCompressedSize: true, // 启用gzip压缩大小报告(禁用时可提高构建大型项目的性能)
+      // rollupOptions: {
+      //   input:{
+      //     entry:resolve(__dirname,'index.html'),
+      //     main: resolve(__dirname, 'src/main.ts'),
+      //   },
+      //   // 自定义底层的 Rollup 打包配置
+      //   output: {
+      //     entryFileNames: `assets/[name].${new Date().getTime()}.js`,
+      //     chunkFileNames: `assets/[name].${new Date().getTime()}.js`,
+      //     assetFileNames: `assets/[name].${new Date().getTime()}.[ext]`,
+      //     compact: true,
+      //     manualChunks: {
+      //       vue: ["vue", "vue-router", "pinia"],
+      //       echarts: ["echarts"],
+      //     },
+      //   },
+      // },
       //生产环境自动删除console
-      terserOptions: {
-        compress: {
-          drop_console: true, // 自动去除console
-          drop_debugger: true, // 清除 debugger 语句
-        },
-        ie8: true, // 是否支持ie8
-        output: { comments: true }, // 删除注释
-      },
+      // terserOptions: {
+      //   compress: {
+      //     drop_console: true, // 自动去除console
+      //     drop_debugger: true, // 清除 debugger 语句
+      //   },
+      //   ie8: true, // 是否支持ie8
+      //   output: { comments: true }, // 删除注释
+      // },
 
-      css: {
-        preprocessorOptions: {
-          less: {
-            javascriptEnabled: true,
-            modifyVars: {
-              "primary-color": "#1890ff", // 全局主色
-              "link-color": " #1890ff", // 链接色
-              "success-color": " #52c41a", // 成功色
-              "warning-color": " #faad14", // 警告色
-              "error-color": " #f5222d", // 错误色
-              "font-size-base": " 14px", // 主字号
-              "heading-color": " rgba(0, 0, 0, 0.85)", // 标题色
-              "text-color": " rgba(0, 0, 0, 0.65)", // 主文本色
-              "text-color-secondary": " rgba(0, 0, 0, 0.45)", // 次文本色
-              "disabled-color": " rgba(0, 0, 0, 0.25)", // 失效色
-              "border-radius-base": " 2px", // 组件/浮层圆角
-              "border-color-base": " #d9d9d9", // 边框色
-              "box-shadow-base": " 0 2px 8px rgba(0, 0, 0, 0.15)", // 浮层阴影
-            },
-          },
-        },
-      },
+      // css: {
+      //   preprocessorOptions: {
+      //     less: {
+      //       javascriptEnabled: true,
+      //       modifyVars: {
+      //         "primary-color": "#1890ff", // 全局主色
+      //         "link-color": " #1890ff", // 链接色
+      //         "success-color": " #52c41a", // 成功色
+      //         "warning-color": " #faad14", // 警告色
+      //         "error-color": " #f5222d", // 错误色
+      //         "font-size-base": " 14px", // 主字号
+      //         "heading-color": " rgba(0, 0, 0, 0.85)", // 标题色
+      //         "text-color": " rgba(0, 0, 0, 0.65)", // 主文本色
+      //         "text-color-secondary": " rgba(0, 0, 0, 0.45)", // 次文本色
+      //         "disabled-color": " rgba(0, 0, 0, 0.25)", // 失效色
+      //         "border-radius-base": " 2px", // 组件/浮层圆角
+      //         "border-color-base": " #d9d9d9", // 边框色
+      //         "box-shadow-base": " 0 2px 8px rgba(0, 0, 0, 0.15)", // 浮层阴影
+      //       },
+      //     },
+      //   },
+      // },
     },
   };
 });
