@@ -1,0 +1,1 @@
+import{d as a,j as s,aG as e,aH as n,_ as r,b as t,c as o}from"./main.3af4d28c.js";import"./preload-helper.d2ed6b55.js";const c=a({name:"404",components:{},setup(){const a=s({});return e((()=>{})),{...n(a)}}}),p={class:"app-container"};const d=r(c,[["render",function(a,s,e,n,r,c){return t(),o("div",p," 404 ")}]]);export{d as default};
