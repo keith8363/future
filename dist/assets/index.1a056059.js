@@ -1,0 +1,1 @@
+import{d as a,j as s,aG as n,aH as t,_ as e,b as o,c as r}from"./main.ef1a9188.js";const c=a({name:"404",components:{},setup(){const a=s({});return n((()=>{})),{...t(a)}}}),p={class:"app-container"};const i=e(c,[["render",function(a,s,n,t,e,c){return o(),r("div",p," 404 ")}]]);export{i as default};
