@@ -84,9 +84,7 @@ export default defineConfig(({ mode }) => {
       minify: "terser", // 混淆器，terser构建后文件体积更小
       reportCompressedSize: true, // 启用gzip压缩大小报告(禁用时可提高构建大型项目的性能)
       rollupOptions: {
-        input:{
-          entry:resolve(__dirname,'/index.html')
-        },
+        input:resolve(__dirname,'/index.html'),
         // 自定义底层的 Rollup 打包配置
         output: {
           entryFileNames: `assets/[name].${new Date().getTime()}.js`,
