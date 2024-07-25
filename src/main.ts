@@ -1,6 +1,5 @@
 import echarts from "@/components/Echarts";
 import svgIcon from "@/components/SvgIcon/index.vue";
-import "@/styles/index.scss";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 import "virtual:svg-icons-register";
 import { createApp } from "vue";
