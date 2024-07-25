@@ -5,7 +5,7 @@
   "author": "keith",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix"

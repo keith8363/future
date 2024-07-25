@@ -89,13 +89,13 @@
 				</template>
 			</el-table-column>
 
-			<el-table-column v-if="table.openDetailName" align="center" fixed="right" label="" :width="table.btnWidth ? table.btnWidth : '50'" class-name="openDetailName">
+			<!-- <el-table-column v-if="table.openDetailName" align="center" fixed="right" label="" :width="table.btnWidth ? table.btnWidth : '50'" class-name="openDetailName">
 				<template #default="scope">
 					<el-tooltip effect="dark" content="报表跳转" placement="top" :open-delay="500">
 						<img class="btn" src="@/assets/Project/btn.png" alt="" @click="btnClick(scope)">
 					</el-tooltip>
 				</template>
-			</el-table-column>
+			</el-table-column> -->
 
 			<el-table-column v-if="table.hasEmptyCell"></el-table-column>
 

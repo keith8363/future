@@ -9,8 +9,8 @@ import { onMounted, onUnmounted, shallowRef, watch } from 'vue'
 import { color, fontColor } from './params'
 
 // let imgRect = 'image://src/assets/GroupOverview/rect.png'
-import imgDown from '@/assets/GroupOverview/down.png'
-import imgUp from '@/assets/GroupOverview/up.png'
+// import imgDown from '@/assets/GroupOverview/down.png'
+// import imgUp from '@/assets/GroupOverview/up.png'
 
 const emits = defineEmits(['getCurrentItem'])
 const chart = shallowRef(null)
@@ -167,14 +167,14 @@ const transOptions = (result) => {
 							fontWeight: 700,
 						},
 						icon: {
-							backgroundColor: {
-								image: imgUp,
-							},
+							// backgroundColor: {
+							// 	image: imgUp,
+							// },
 						},
 						icon2: {
-							backgroundColor: {
-								image: imgDown,
-							},
+							// backgroundColor: {
+							// 	image: imgDown,
+							// },
 							// fontSize: fontSizeWidth(16),
 						},
 					},
