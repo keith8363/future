@@ -1,0 +1,1 @@
+import{k as e,S as r}from"./entry.1721912892732.js";const o=({from:o,replacement:t,scope:m,version:s,ref:p,type:a="API"},i)=>{e((()=>r(i)),(e=>{}),{immediate:!0})};export{o};

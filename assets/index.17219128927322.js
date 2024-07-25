@@ -1,0 +1,1 @@
+import{w as e,u as o}from"./vue.1721912892732.js";const r=({from:r,replacement:s,scope:m,version:t,ref:a,type:p="API"},i)=>{e((()=>o(i)),(e=>{}),{immediate:!0})};export{r as u};
