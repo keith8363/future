@@ -1,12 +1,11 @@
 import vue from "@vitejs/plugin-vue";
-import { defineConfig, loadEnv } from "vite";
 import AutoImport from "unplugin-auto-import/vite";
-import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import Components from "unplugin-vue-components/vite";
+import { defineConfig, loadEnv } from "vite";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 
-import { resolve } from "path";
-import path from "path";
+import path, { resolve } from "path";
 
 const pathResolve = (dir: string) => {
   return resolve(__dirname, dir);
@@ -85,6 +84,9 @@ export default defineConfig(({ mode }) => {
       minify: "terser", // 混淆器，terser构建后文件体积更小
       reportCompressedSize: true, // 启用gzip压缩大小报告(禁用时可提高构建大型项目的性能)
       rollupOptions: {
+        input:{
+          entry:resolve(__dirname,'/src/index.html')
+        },
         // 自定义底层的 Rollup 打包配置
         output: {
           entryFileNames: `assets/[name].${new Date().getTime()}.js`,
