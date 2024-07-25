@@ -4,6 +4,6 @@ const arrow = {
   'number-right-yellow':new URL(`@/assets/header/yellowjt.png`,import.meta.url).href,
 }
 
-export const getArrow = (val:string) => {
+export const getArrow = (val:string):string => {
   return arrow[val]
 }
