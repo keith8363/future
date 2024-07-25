@@ -20,6 +20,6 @@
       "#":["src/types/*"]
     },
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.js","src/types/env.d.ts", "src/utils/get-menu.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.js","src/types/env.d.ts", "src/utils/get-menu.ts", "main.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

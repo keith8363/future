@@ -1,13 +1,13 @@
 import echarts from "@/components/Echarts";
 import svgIcon from "@/components/SvgIcon/index.vue";
+import router from "@/router";
+import pinia from "@/stores/index";
 import "@/styles/index.scss";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 import "virtual:svg-icons-register";
 import { createApp } from "vue";
-import router from "./router";
-import pinia from "./stores/index";
 
-import App from "./App.vue";
+import App from "@/App.vue";
 
 import config from "@/setting";
 
